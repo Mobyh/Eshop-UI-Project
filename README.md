@@ -1,6 +1,9 @@
-# fatec-ecommerce-vuetify
+# UI Ecommerce
 
-> Sample basic e-commerce layout using Vue Router and Vuetify.
+> UI Ecommerce project
+> Ana Garza
+> Chris C.
+> Henry Tran
 
 ## Project setup
 ```
@@ -16,16 +19,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
