@@ -1,9 +1,7 @@
-# UI Ecommerce
-
-> UI Ecommerce project
-> Ana Garza
-> Chris C.
-> Henry Tran
+# UI Ecommerce project
+- Ana Garza
+- Chris C.
+- Henry Tran
 
 ## Project setup
 ```
