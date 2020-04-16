@@ -1,26 +1,47 @@
-import Vue from "vue";
-import Router from "vue-router";
-import Home from "./views/Home.vue";
+import Vue from 'vue'
+import Router from 'vue-router'
+import Home from './views/Home.vue'
 
-Vue.use(Router);
+Vue.use(Router)
 
 export default new Router({
-  mode: "history",
+  mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
-      path: "/",
-      name: "home",
-      component: Home
+      path: '/',
+      name: 'panel-login',
+      component: () => import('./views/panel/Login.vue')
     },
     {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+      path: '/cart',
+      name: 'cart',
+      component: () => import('./views/Cart.vue')
+    },
+    {
+      path: '/panel/login',
+      name: 'panel-login',
+      component: () => import('./views/panel/Login.vue')
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('./views/About.vue')
+    },
+    {
+      path: '/panel',
+      name: 'panel-index',
+      component: () => import('./views/Home.vue')
+    },
+    {
+      path: '/panel/users',
+      name: 'panel-users',
+      component: () => import('./views/panel/Users.vue')
+    },
+    {
+      path: '/panel/products',
+      name: 'panel-products',
+      component: () => import('./views/panel/Products.vue')
     }
   ]
-});
+})

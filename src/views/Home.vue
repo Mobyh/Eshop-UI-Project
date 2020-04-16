@@ -1,39 +1,55 @@
 <template>
-  <div class="home">
-      <Hero/>
-      <Products/>
-
-      <div class="container h-100">
-        <div class="row p-5 h-100 justify-content-center align-items-center">
-          <div class="col-md-6">
-            <img src="/img/svg/product.svg" alt="" width="400">
-          </div>
-          <div class="col-md-6">
-            <h3>Learn More About us</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quaerat voluptate iusto? Nihil voluptas vitae veritatis magnam reprehenderit, reiciendis ex? Libero quasi natus veniam voluptatum, voluptas exercitationem ratione consectetur et!
-            </p>
-             <button class="btn custom-btn btn-outline-primary mr-4">Browse Products</button>
-          </div>
-        </div>
-      </div>
-  </div>
+  <v-content>
+    <appbar :title="title"></appbar>
+    <v-expansion-panels>
+      <v-expansion-panel>
+        <v-expansion-panel-header>Electronics</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <v-container fluid>
+            <v-row>
+              <v-col md="2" v-for="product in electronics" :key="product">
+                <product v-bind:products="product"></product>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel>
+        <v-expansion-panel-header>Furniture</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <v-container fluid>
+            <v-row>
+              <v-col md="2" v-for="product in furniture" :key="product">
+                <product v-bind:products="product"></product>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+    </v-expansion-panels>
+  </v-content>
 </template>
 
 <script>
-// @ is an alias to /src
-import Hero from "@/components/Hero.vue";
-import Products from "@/sections/Products.vue";
+import Product from "../components/Product.vue";
+import Appbar from "../components/appbar.vue";
+var electronicsJson = require("../assets/electronics.json");
+var furnitureJson = require("../assets/furniture.json");
 
 export default {
-  name: "home",
+  methods: {
+    navegar() {
+      this.$router.push("/about");
+    }
+  },
   components: {
-    Hero,Products
-  }
+    Product,
+    Appbar
+  },
+  data: () => ({
+    electronics: electronicsJson,
+    furniture: furnitureJson,
+    title: "Ecommerce UI"
+  })
 };
 </script>
-
-<style>
-
-</style>
-
